@@ -10,14 +10,15 @@ import myOfficeImage from '../assets/images/2026/02/my-office.jpg';
     <h1 class="text-4xl md:text-5xl font-bold mb-12">About Me</h1>
 
     <div class="grid grid-cols-1 md:grid-cols-[360px_1fr] gap-12 md:gap-16 mb-12">
-      <div>
+      <figure>
         <Image
           src={myOfficeImage}
           alt="Daniel’s office workspace"
           width={360}
           class="rounded-lg h-auto"
         />
-      </div>
+        <figcaption class="text-center text-gray-600 text-sm mt-3">My Office</figcaption>
+      </figure>
 
       <div class="prose space-y-6">
         <p>
