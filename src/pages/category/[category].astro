@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+
+  // Get all unique categories
+  const categories = [...new Set(allPosts.map((post) => post.data.category))];
+
+  return categories.map((category) => ({
+    params: { category: category.toLowerCase().replace(/\s+/g, '-') },
+    props: {
+      posts: allPosts.filter((post) => post.data.category === category),
+      categoryName: category,
+    },
+  }));
+}
+
+interface Props {
+  posts: any[];
+  categoryName: string;
+}
+
+const { posts, categoryName } = Astro.props;
+
+const sortedPosts = posts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<BaseLayout title={`${categoryName} - Blog`} description={`All posts in the ${categoryName} category.`}>
+  <div class="py-12 md:py-20">
+    <div class="mb-12">
+      <a href="/blog" class="text-accent font-medium hover:opacity-80 transition mb-4 inline-block">
+        ← Back to Blog
+      </a>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Posts in <span class="text-accent">{categoryName}</span>
+      </h1>
+      <p class="text-lg text-gray-600">
+        {sortedPosts.length}
+        {sortedPosts.length === 1 ? 'post' : 'posts'}
+      </p>
+    </div>
+
+    {
+      sortedPosts.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {sortedPosts.map((post) => (
+            <BlogCard post={post} />
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-12">
+          <p class="text-gray-600 text-lg">No posts found in this category.</p>
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

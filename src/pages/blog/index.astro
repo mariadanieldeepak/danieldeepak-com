@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+
+// Get unique categories for filter
+const categories = [...new Set(allPosts.map((post) => post.data.category))];
+---
+
+<BaseLayout title="Blog" description="All blog posts and articles.">
+  <div class="py-12 md:py-20">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
+    <p class="text-lg text-gray-600 mb-12">
+      Thoughts on thinking, tools, and building in public.
+    </p>
+
+    <!-- Category Filter -->
+    <div class="mb-12">
+      <div class="flex flex-wrap gap-2">
+        <button
+          data-filter="all"
+          class="filter-btn active px-4 py-2 rounded-lg font-medium transition bg-accent text-white"
+        >
+          All
+        </button>
+        {
+          categories.map((category) => (
+            <button
+              data-filter={category.toLowerCase().replace(/\s+/g, '-')}
+              data-category={category}
+              class="filter-btn px-4 py-2 rounded-lg font-medium transition border border-gray-300 hover:border-accent hover:text-accent"
+            >
+              {category}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Posts Grid -->
+    <div
+      id="posts-container"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {sortedPosts.map((post) => <BlogCard post={post} />)}
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // Client-side filtering for categories
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const postsContainer = document.getElementById('posts-container');
+
+  if (postsContainer) {
+    const posts = postsContainer.querySelectorAll('article');
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filterValue = btn.dataset.category;
+
+        // Update active state
+        filterBtns.forEach((b) => {
+          b.classList.remove('active', 'bg-accent', 'text-white');
+          b.classList.add('border', 'border-gray-300');
+        });
+        btn.classList.add('active', 'bg-accent', 'text-white');
+        btn.classList.remove('border', 'border-gray-300');
+
+        // Filter posts
+        posts.forEach((post) => {
+          if (filterValue === 'all') {
+            post.style.display = 'block';
+          } else {
+            // Check if post has this category
+            const postCategory = post
+              .querySelector('[class*="CategoryBadge"]')
+              ?.textContent?.toLowerCase()
+              .trim();
+            post.style.display =
+              postCategory === filterValue?.toLowerCase() ? 'block' : 'none';
+          }
+        });
+      });
+    });
+  }
+</script>
+
+<style>
+  .filter-btn.active {
+    @apply bg-accent text-white;
+  }
+</style>

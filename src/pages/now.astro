@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const lastUpdated = new Date().toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title="Now" description="What I'm doing now.">
+  <div class="py-12 md:py-20 max-w-2xl">
+    <h1 class="text-4xl md:text-5xl font-bold mb-2">Now</h1>
+    <p class="text-gray-600 text-sm mb-12">Last updated: {lastUpdated}</p>
+
+    <div class="prose space-y-12">
+      <section>
+        <h2 class="text-2xl font-bold mb-4">What I'm Working On</h2>
+        <ul class="space-y-3">
+          <li>
+            Building a personal knowledge management system to better document and share
+            what I learn.
+          </li>
+          <li>
+            Exploring the intersection of first-principles thinking and decision-making in
+            uncertain environments.
+          </li>
+          <li>
+            Experimenting with different writing formats and mediums to find what resonates
+            with readers.
+          </li>
+          <li>
+            Refining my toolkit and workflow—constantly testing new applications and
+            optimizing for focus.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Currently Reading</h2>
+        <ul class="space-y-3">
+          <li>
+            <strong>"Thinking, Fast and Slow"</strong> by Daniel Kahneman — Understanding
+            how we make decisions and the biases that influence us.
+          </li>
+          <li>
+            <strong>"The Courage to Be Disliked"</strong> — A dialogue about psychology,
+            freedom, and how to live authentically.
+          </li>
+          <li>
+            <strong>"Essays by Paul Graham"</strong> — On startups, technology, and what
+            it means to do good work.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Thinking About</h2>
+        <ul class="space-y-3">
+          <li>
+            How to make better decisions with incomplete information.
+          </li>
+          <li>
+            The relationship between transparency (building in public) and strategic
+            advantage.
+          </li>
+          <li>
+            Creating a sustainable pace of work and creativity rather than burning out.
+          </li>
+          <li>
+            What it means to build something that genuinely matters to people.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Location</h2>
+        <p>
+          Currently based in a place with good coffee, reliable internet, and quiet spaces
+          to focus. I move around occasionally but keep the same core routine.
+        </p>
+      </section>
+
+      <p class="text-sm text-gray-600 italic pt-8">
+        This is a "now" page inspired by{' '}
+        <a href="https://nownownow.com" target="_blank" rel="noopener noreferrer">
+          nownownow.com
+        </a>
+        . It's regularly updated to reflect what's currently occupying my time and attention.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :global(.prose) {
+    color: #333;
+  }
+
+  :global(.prose a) {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+
+  :global(.prose a:hover) {
+    opacity: 0.8;
+  }
+
+  :global(.prose h2) {
+    color: #0a0a0a;
+    line-height: 1.2;
+  }
+
+  :global(.prose ul) {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  :global(.prose li) {
+    margin-bottom: 0.75rem;
+  }
+
+  :global(.prose strong) {
+    font-weight: 700;
+  }
+
+  :global(.prose p) {
+    line-height: 1.8;
+  }
+</style>

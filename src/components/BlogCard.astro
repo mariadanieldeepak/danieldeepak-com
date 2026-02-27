@@ -1,0 +1,72 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import CategoryBadge from './CategoryBadge.astro';
+import TagPill from './TagPill.astro';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { data } = post;
+
+const formattedDate = new Date(data.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+});
+
+// Calculate reading time
+const wordCount = post.body.split(/\s+/).length;
+const readingTime = Math.ceil(wordCount / 200);
+---
+
+<article class="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition">
+  <!-- Featured Image -->
+  {
+    data.featuredImage && (
+      <img
+        src={data.featuredImage}
+        alt={data.title}
+        class="w-full h-48 object-cover"
+      />
+    )
+  }
+
+  <div class="p-6">
+    <!-- Category Badge -->
+    <div class="mb-3">
+      <CategoryBadge category={data.category} />
+    </div>
+
+    <!-- Title -->
+    <h2 class="text-xl font-bold mb-3">
+      <a href={`/blog/${post.slug}`} class="hover:text-accent transition">
+        {data.title}
+      </a>
+    </h2>
+
+    <!-- Excerpt -->
+    <p class="text-gray-600 mb-4 line-clamp-2">{data.excerpt}</p>
+
+    <!-- Tags -->
+    <div class="flex flex-wrap gap-2 mb-4">
+      {data.tags.slice(0, 3).map((tag) => <TagPill tag={tag} />)}
+    </div>
+
+    <!-- Meta -->
+    <div class="flex items-center justify-between text-sm text-gray-500">
+      <span>{formattedDate}</span>
+      <span>{readingTime} min read</span>
+    </div>
+  </div>
+</article>
+
+<style>
+  :global(.line-clamp-2) {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

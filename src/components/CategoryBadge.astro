@@ -1,0 +1,19 @@
+---
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props;
+
+// Convert category name to slug format
+const categorySlug = category
+  .toLowerCase()
+  .replace(/\s+/g, '-');
+---
+
+<a
+  href={`/category/${categorySlug}`}
+  class="inline-block bg-accent text-white text-xs font-bold px-3 py-1 rounded-full hover:opacity-90 transition"
+>
+  {category}
+</a>

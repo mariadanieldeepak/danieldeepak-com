@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="FAQ" description="Frequently asked questions about me and my work.">
+  <div class="py-12 md:py-20 max-w-2xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+    <p class="text-lg text-gray-600 mb-12">
+      Common questions about my work, thinking, and approach.
+    </p>
+
+    <div class="space-y-4">
+      <!-- FAQ Item 1 -->
+      <details class="group border border-gray-200 rounded-lg p-6 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-lg hover:text-accent transition">
+          <span>What's the focus of your writing?</span>
+          <span class="transition group-open:rotate-180">▼</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          I write about first-principles thinking, productivity and workflow optimization, and what
+          it takes to build things in public. My goal is to share mental models and frameworks that
+          might be useful to others.
+        </p>
+      </details>
+
+      <!-- FAQ Item 2 -->
+      <details class="group border border-gray-200 rounded-lg p-6 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-lg hover:text-accent transition">
+          <span>How often do you publish new posts?</span>
+          <span class="transition group-open:rotate-180">▼</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          I aim for one substantive post per month, though the frequency varies based on what I'm
+          working on. Quality over quantity is my approach—I'd rather publish one thoughtful post
+          than multiple low-effort pieces.
+        </p>
+      </details>
+
+      <!-- FAQ Item 3 -->
+      <details class="group border border-gray-200 rounded-lg p-6 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-lg hover:text-accent transition">
+          <span>Can I use your ideas or quotes?</span>
+          <span class="transition group-open:rotate-180">▼</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Absolutely! If something resonates with you, feel free to use it, share it, or build on
+          it. Just give attribution when possible. I believe ideas are meant to be shared and
+          improved upon.
+        </p>
+      </details>
+
+      <!-- FAQ Item 4 -->
+      <details class="group border border-gray-200 rounded-lg p-6 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-lg hover:text-accent transition">
+          <span>How can I contact you?</span>
+          <span class="transition group-open:rotate-180">▼</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          The best way is to reach out on Twitter/X or LinkedIn. I try to respond to genuine messages
+          and questions. You can find links in the footer of this site.
+        </p>
+      </details>
+
+      <!-- FAQ Item 5 -->
+      <details class="group border border-gray-200 rounded-lg p-6 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-lg hover:text-accent transition">
+          <span>Do you take consulting or collaboration opportunities?</span>
+          <span class="transition group-open:rotate-180">▼</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          I'm open to the right opportunities—whether that's writing projects, speaking engagements,
+          or collaborations with people thinking about similar problems. Reach out with details about
+          what you have in mind.
+        </p>
+      </details>
+
+      <!-- FAQ Item 6 -->
+      <details class="group border border-gray-200 rounded-lg p-6 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-lg hover:text-accent transition">
+          <span>What tools do you use to build this site?</span>
+          <span class="transition group-open:rotate-180">▼</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          This site is built with Astro, a modern static site builder, and styled with Tailwind CSS.
+          Posts are written in Markdown. The source code practices the philosophy of simplicity and
+          static generation—no databases or complex infrastructure needed.
+        </p>
+      </details>
+
+      <!-- FAQ Item 7 -->
+      <details class="group border border-gray-200 rounded-lg p-6 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-lg hover:text-accent transition">
+          <span>Can I subscribe to your posts?</span>
+          <span class="transition group-open:rotate-180">▼</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          Currently, the best way to stay updated is to follow me on Twitter/X or check back on the
+          blog regularly. I'm considering adding an email newsletter in the future—follow me for
+          announcements if that interests you.
+        </p>
+      </details>
+
+      <!-- FAQ Item 8 -->
+      <details class="group border border-gray-200 rounded-lg p-6 cursor-pointer">
+        <summary class="flex items-center justify-between font-bold text-lg hover:text-accent transition">
+          <span>What's your philosophy on productivity?</span>
+          <span class="transition group-open:rotate-180">▼</span>
+        </summary>
+        <p class="mt-4 text-gray-600 leading-relaxed">
+          I believe productivity is about intentionality, not optimization. It's about understanding
+          what actually matters to you and removing friction around those things. The best productivity
+          tool is one that gets out of your way and lets you focus on what you care about.
+        </p>
+      </details>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  details summary {
+    list-style: none;
+  }
+
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  details[open] summary span:last-child {
+    transform: rotate(180deg);
+  }
+</style>

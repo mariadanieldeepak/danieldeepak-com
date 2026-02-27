@@ -1,0 +1,113 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import CategoryBadge from '../components/CategoryBadge.astro';
+import TagPill from '../components/TagPill.astro';
+
+interface Props {
+  title: string;
+  date: Date;
+  category: string;
+  tags: string[];
+  excerpt: string;
+  wordCount: number;
+}
+
+const { title, date, category, tags, excerpt, wordCount } = Astro.props;
+
+const readingTime = Math.ceil(wordCount / 200);
+
+const formattedDate = new Date(date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={title} description={excerpt}>
+  <article class="py-16">
+    <header class="mb-12">
+      <div class="mb-4">
+        <CategoryBadge category={category} />
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
+      <p class="text-gray-600 text-lg">{excerpt}</p>
+      <div class="flex flex-wrap gap-4 mt-6 text-sm text-gray-600">
+        <span>{formattedDate}</span>
+        <span>•</span>
+        <span>{readingTime} min read</span>
+      </div>
+    </header>
+
+    <div class="prose prose-lg max-w-none mb-12">
+      <slot />
+    </div>
+
+    <footer class="border-t border-gray-200 pt-8">
+      <div class="mb-6">
+        <h3 class="text-sm font-semibold text-gray-700 uppercase tracking-wide mb-3">
+          Tags
+        </h3>
+        <div class="flex flex-wrap gap-2">
+          {tags.map((tag) => <TagPill tag={tag} />)}
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-gray-200">
+        <p class="text-sm text-gray-600">
+          Published in <strong>{category}</strong> on {formattedDate}
+        </p>
+      </div>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  :global(.prose) {
+    color: #333;
+  }
+
+  :global(.prose a) {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+
+  :global(.prose a:hover) {
+    opacity: 0.8;
+  }
+
+  :global(.prose code) {
+    background: #f5f5f5;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+    color: #e63946;
+  }
+
+  :global(.prose pre) {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+  }
+
+  :global(.prose h2) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  :global(.prose h3) {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  :global(.prose p) {
+    margin-bottom: 1rem;
+  }
+
+  :global(.prose ul),
+  :global(.prose ol) {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  :global(.prose li) {
+    margin-bottom: 0.5rem;
+  }
+</style>

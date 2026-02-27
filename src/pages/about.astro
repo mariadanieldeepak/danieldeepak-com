@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="Learn more about Daniel Deepak.">
+  <div class="py-12 md:py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+      <!-- Photo -->
+      <div class="flex justify-center md:justify-start">
+        <img
+          src="/images/placeholder-avatar.svg"
+          alt="Daniel Deepak"
+          class="w-64 h-64 rounded-2xl shadow-lg object-cover"
+        />
+      </div>
+
+      <!-- Bio -->
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">About Me</h1>
+
+        <div class="prose space-y-6">
+          <p>
+            I'm Daniel Deepak, and I'm fascinated by how people think, how markets work,
+            and how the right tools can change everything.
+          </p>
+
+          <p>
+            For the past decade, I've been building products, studying mental models, and
+            documenting the journey. This blog is my space to share ideas that I think
+            matter—things I've learned from building, from reading, and from talking with
+            people who are doing interesting things.
+          </p>
+
+          <h2 class="text-2xl font-bold mt-8">What I Believe</h2>
+
+          <ul class="space-y-4">
+            <li>
+              <strong>Clarity is rare.</strong> Most people haven't thought deeply about what
+              they believe or why they're building what they're building. I write to think
+              clearly.
+            </li>
+            <li>
+              <strong>Tools shape thinking.</strong> The right tool doesn't just save time—it
+              changes how you approach a problem. That's why I'm obsessed with productivity
+              and workflow optimization.
+            </li>
+            <li>
+              <strong>First principles matter.</strong> In a world of conventional wisdom and
+              inherited constraints, the ability to think from first principles is a
+              superpower.
+            </li>
+            <li>
+              <strong>Building in public builds trust.</strong> Transparency, honesty about
+              progress, and showing your work are underrated competitive advantages.
+            </li>
+          </ul>
+
+          <h2 class="text-2xl font-bold mt-8">Currently</h2>
+
+          <p>
+            I'm focused on understanding how to build sustainably, how to make decisions
+            with incomplete information, and how to create something that matters to people.
+          </p>
+
+          <p>
+            When I'm not thinking about these things, you'll find me reading, experimenting
+            with new tools and workflows, or documenting insights that might be useful to
+            others.
+          </p>
+
+          <h2 class="text-2xl font-bold mt-8">Get In Touch</h2>
+
+          <p>
+            If you're thinking about similar things or want to discuss ideas, I'd love to
+            hear from you. Reach out on{' '}
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              Twitter/X
+            </a>{' '}
+            or{' '}
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            .
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  :global(.prose) {
+    color: #333;
+  }
+
+  :global(.prose a) {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+
+  :global(.prose a:hover) {
+    opacity: 0.8;
+  }
+
+  :global(.prose h2) {
+    color: #0a0a0a;
+    line-height: 1.2;
+  }
+
+  :global(.prose ul) {
+    list-style: disc;
+    padding-left: 1.5rem;
+  }
+
+  :global(.prose li) {
+    margin-bottom: 1rem;
+  }
+
+  :global(.prose strong) {
+    font-weight: 700;
+  }
+
+  :global(.prose p) {
+    line-height: 1.8;
+  }
+</style>

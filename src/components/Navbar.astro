@@ -1,0 +1,103 @@
+---
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Blog', path: '/blog' },
+  { label: 'FAQ', path: '/faq' },
+  { label: 'Now', path: '/now' },
+  { label: 'Tools', path: '/tools' },
+];
+
+const isActive = (path: string) => {
+  if (path === '/' && currentPath === '/') return true;
+  if (path !== '/' && currentPath.startsWith(path)) return true;
+  return false;
+};
+---
+
+<nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
+  <div class="max-w-[1100px] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-2xl font-bold text-primary hover:opacity-80 transition">
+      Daniel Deepak
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.path}
+            class={`font-medium transition ${
+              isActive(link.path)
+                ? 'text-accent'
+                : 'text-primary hover:text-accent'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 hover:bg-gray-100 rounded transition"
+      aria-label="Toggle menu"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <div class="max-w-[1100px] mx-auto px-4 sm:px-6 py-4 flex flex-col gap-2">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.path}
+            class={`block py-2 px-3 rounded transition ${
+              isActive(link.path)
+                ? 'bg-accent text-white'
+                : 'hover:bg-gray-100'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking a link
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
+</script>
