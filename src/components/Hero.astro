@@ -1,16 +1,25 @@
 ---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/2026/02/maria-daniel-deepak.jpg';
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 py-16 md:py-32 items-center">
   <!-- Photo -->
   <div class="flex justify-center md:justify-start">
-    <div class="w-full max-w-[750px] aspect-square overflow-hidden">
-      <img
-        src="/images/2026/02/maria-daniel-deepak.jpg"
-        alt="Daniel Deepak"
-        class="w-full h-full object-cover rounded-lg"
-      />
-    </div>
+    <figure class="w-full max-w-[750px]">
+      <div class="aspect-square overflow-hidden rounded-lg">
+        <Image
+          src={heroImage}
+          alt="Daniel Deepak during a trip to Kashmir"
+          width={750}
+          height={750}
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <figcaption class="text-center text-gray-600 text-sm mt-3">
+        During a trip to Kashmir
+      </figcaption>
+    </figure>
   </div>
 
   <!-- Bio -->
