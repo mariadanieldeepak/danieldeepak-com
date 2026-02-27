@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from './BaseLayout.astro';
 import CategoryBadge from '../components/CategoryBadge.astro';
 import TagPill from '../components/TagPill.astro';
@@ -9,10 +10,11 @@ interface Props {
   category: string;
   tags: string[];
   excerpt: string;
+  image?: any;
   wordCount: number;
 }
 
-const { title, date, category, tags, excerpt, wordCount } = Astro.props;
+const { title, date, category, tags, excerpt, image, wordCount } = Astro.props;
 
 const readingTime = Math.ceil(wordCount / 200);
 
@@ -43,6 +45,11 @@ const formattedDateTime = new Date(date).toLocaleString('en-US', {
         <span>•</span>
         <span>{readingTime} min read</span>
       </div>
+      {image && (
+        <div class="mt-8 flex justify-center">
+          <Image src={image} alt={title} width={800} height={400} class="rounded-lg shadow-lg" />
+        </div>
+      )}
     </header>
 
     <div class="prose max-w-none mb-12">

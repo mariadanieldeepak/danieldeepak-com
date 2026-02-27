@@ -2,6 +2,7 @@
 title: "Hello world!"
 date: 2022-02-22T10:30:00+05:30
 excerpt: "Inconvenience is sometimes good. Know why."
+image: ../../assets/images/2022/02/hello-world.jpg
 category: "Notes"
 tags: ["Linode"]
 ---
