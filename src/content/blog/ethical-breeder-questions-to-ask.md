@@ -18,7 +18,7 @@ Learn more about <a href="https://tapthatbrain.com/article/make-your-dog-live-ha
 
 **What does Animal Welfare Board Of India (AWBI) say?**
 
-Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (7)</a>
+Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (7)</a>
 
 ### 02. How many dogs do you raise?
 
@@ -26,8 +26,8 @@ Note that each dog demands at least 30 minutes of attention a day. Paying attent
 
 **What does AWBI say?**
 
-- Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (24(5))</a>
-- Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (24(6d))</a>
+- Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (24(5))</a>
+- Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (24(6d))</a>
 
 ### 03. Do you breed your bitches in all heat cycles?
 
@@ -35,9 +35,9 @@ Like humans, dogs need interpregnancy interval to restore their physical and men
 
 **What does AWBI say?**
 
-- Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (5(2))</a>
-- Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (5(3))</a>
-- Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (6(4))</a>
+- Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (5(2))</a>
+- Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (5(3))</a>
+- Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (6(4))</a>
 
 ### 04. What breeding technique do you use?
 
@@ -45,7 +45,7 @@ Out breeding is the only recommended technique unless the breed is at the verge 
 
 **What does AWBI say?**
 
-Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (6(2))</a>
+Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (6(2))</a>
 
 ### 05. When do you usually re-home a pup?
 
@@ -53,7 +53,7 @@ Puppies need to be with the mother and their litter until at least they're 6 wee
 
 **What does AWBI say?**
 
-Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (8a)</a>
+Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (8a)</a>
 
 ### 06. Vaccinations & De-worming
 
@@ -61,7 +61,7 @@ Mother feeding is very important for pup's immunity. So are vaccinations and de-
 
 **What does AWBI say?**
 
-Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (7)</a>
+Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (7)</a>
 
 ### 07. The size of a dog's shelter
 
@@ -69,7 +69,7 @@ Dogs should be housed in comfortable shelters. The length of the shelter should 
 
 **What does AWBI say?**
 
-Refer <a href="#" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (5)</a>
+Refer <a href="http://awbi.in/awbi-pdf/Dog%20Breeding%20and%20Marketing%20English.pdf" target="_blank">The Prevention of Cruelty to Animals (Dog Breeding and Marketing Rules) Rules, 2017 (5)</a>
 
 Note that my views on each section is in accordance with Animal Welfare Board Of India. The breeder whom I spoke to was neither ready to accept my views nor he had documents / references to exemplify his views.
 
