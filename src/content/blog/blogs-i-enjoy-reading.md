@@ -3,7 +3,7 @@ title: "Blogs I Enjoy Reading"
 date: 2022-02-27T23:45:00+05:30
 excerpt: "A curated list of blogs that inspire continuous learning and growth."
 category: "Notes"
-tags: ["reading", "blogs", "recommendations", "learning"]
+tags: ["reading", "recommendations"]
 ---
 
 I love reading blogs from people who are passionate about sharing their knowledge. Here's a curated list of blogs I find myself returning to regularly:
