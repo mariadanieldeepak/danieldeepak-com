@@ -1,0 +1,117 @@
+---
+title: "MDX in VS Code: Writing Better Markdown with Components"
+date: 2026-03-01
+excerpt: "The MDX VS Code extension transforms how you write content, bridging the gap between Markdown simplicity and JSX component power. Learn why it's become essential for modern content creation."
+category: "Tools"
+tags: ["productivity", "markdown", "development", "vscode"]
+---
+
+If you work with content that needs more than plain Markdown, you've probably felt the friction. You want the simplicity of Markdown, but you need the power of interactive components. That's where MDX comes in—and the [MDX VS Code extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) makes writing it genuinely enjoyable.
+
+## What Is MDX?
+
+MDX lets you write Markdown with embedded JSX components. Instead of being limited to basic HTML, you can drop React components directly into your content:
+
+```mdx
+# My Blog Post
+
+This is regular markdown. But when I need something fancy, I can use components.
+
+<CalloutBox type="info">
+  This is a reusable component rendered with proper styling and interactivity.
+</CalloutBox>
+
+Back to regular markdown...
+```
+
+It's perfect for:
+- **Blogs that need interactive examples** (think documentation with live code editors)
+- **Landing pages** combining content and components
+- **Educational content** with embedded visualizations
+- **Any place you need rich content without sacrificing Markdown's readability**
+
+## The Problem: Writing MDX Without Support
+
+Before the MDX extension, VS Code treated `.mdx` files as plain text. You'd lose:
+- Syntax highlighting for both Markdown and JSX
+- Code intelligence for components
+- Auto-closing tags
+- Proper formatting rules
+
+It felt like writing with one hand tied behind your back.
+
+## The Solution: The MDX Extension
+
+The Unified MDX extension brings first-class support to VS Code for MDX files. With over 1.1 million installations, it's become the standard tool for MDX developers.
+
+### What You Get
+
+**Syntax Highlighting**: Clean highlighting that respects both Markdown and JSX syntax. Code blocks get proper language-specific highlighting too.
+
+**Language Server**: Intelligent code analysis that understands your components, imports, and JSX structure. You get real-time feedback as you write.
+
+**TypeScript Support**: JSDoc-based typing means you can catch component prop errors before you save.
+
+**Smart Formatting**: Auto-closing tags, proper indentation, and formatting that respects your Markdown structure.
+
+**ESLint Integration**: Works seamlessly with `eslint-plugin-mdx` to lint your content and catch common mistakes.
+
+## Why It Matters
+
+Good tooling removes friction. When your editor understands your content, you can focus on *writing*, not fighting with syntax highlighting or remembering component APIs.
+
+I noticed the difference immediately:
+- **Faster iteration**: No more context-switching between files to check component props
+- **Fewer errors**: Typos in component names get caught right away
+- **Better flow**: When your editor just *works*, writing becomes meditative
+
+## How to Install
+
+If you're using VS Code:
+
+1. Go to Extensions (Cmd/Ctrl + Shift + X)
+2. Search for "MDX"
+3. Install "MDX" by Unified
+
+That's it. Restart VS Code and any `.mdx` files will get proper support.
+
+## Getting Started with MDX
+
+Once the extension is installed, creating MDX content is straightforward:
+
+```mdx
+---
+title: "Your Post Title"
+date: 2026-03-01
+---
+
+import { MyComponent } from '@/components/MyComponent';
+
+# Regular markdown heading
+
+This is regular markdown with **bold** and *italic*.
+
+<MyComponent prop="value" />
+
+More markdown here...
+```
+
+The extension handles the mix of syntax without complaints.
+
+## Pro Tips
+
+**Keep components organized**: Store reusable components in a dedicated folder so they're easy to import.
+
+**Use consistent naming**: Name your `.mdx` files descriptively, matching your component naming convention.
+
+**Leverage TypeScript**: If your components have proper TypeScript types, the extension will help you use them correctly.
+
+**Combine with Prettier**: The extension works well with Prettier for automatic formatting. Configure Prettier to handle `.mdx` files and never worry about formatting again.
+
+## Final Thoughts
+
+MDX is a powerful abstraction—it gives you the best of both worlds: Markdown's simplicity and components' flexibility. The VS Code extension removes the friction of working with MDX, letting you focus on content.
+
+If you're building blogs, documentation, or any content-heavy project, give MDX a try. And install the extension first—it makes all the difference.
+
+What content are you creating? Drop a note in the comments if you've tried MDX or if you're thinking about it.
