@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  type?: 'info' | 'note' | 'tip' | 'warning';
+  title?: string;
+}
+
+const { type = 'info', title } = Astro.props;
+
+const styles = {
+  info: 'bg-blue-50 border-blue-300 text-blue-900',
+  note: 'bg-amber-50 border-amber-300 text-amber-900',
+  tip: 'bg-green-50 border-green-300 text-green-900',
+  warning: 'bg-red-50 border-red-300 text-red-900',
+};
+
+const iconMap = {
+  info: 'mdi:information',
+  note: 'mdi:note-text',
+  tip: 'mdi:lightbulb',
+  warning: 'mdi:alert',
+};
+---
+
+<div class={`border-l-4 p-4 rounded-r ${styles[type]}`}>
+  {title && (
+    <h4 class="font-bold mb-2 flex items-center gap-2">
+      <Icon name={iconMap[type]} class="w-5 h-5" />
+      {title}
+    </h4>
+  )}
+  <div class="text-sm leading-relaxed">
+    <slot />
+  </div>
+</div>
