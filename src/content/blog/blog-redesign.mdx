@@ -1,0 +1,42 @@
+---
+title: "Blog Redesign"
+date: 2026-03-01T15:00:00+05:30
+excerpt: "A look at how I redesigned my blog, comparing the previous version with the new design."
+category: "Web Programming"
+tags: ["web-design", "astro", "redesign"]
+---
+
+import { Image } from 'astro:assets';
+import beforeImage from '../../assets/images/2026/03/blog-redesign-before.png';
+import afterImage from '../../assets/images/2026/03/blog-redesign-after.png';
+
+I recently redesigned my blog, and I wanted to share the transformation. Here's a side-by-side comparison of the before and after versions.
+
+## Home Page
+
+Let us compare the home page before to see the improvements.
+
+#### Before
+
+<Image
+  src={beforeImage}
+  alt="Blog homepage before redesign"
+  width={1920}
+  height={1080}
+/>
+
+#### After
+
+<Image
+  src={afterImage}
+  alt="Blog homepage after redesign"
+  width={1920}
+  height={1080}
+/>
+
+## What Changed
+
+1. The recent posts section was added to the home page to improve user engagement.
+2. While this is great, the LCP (Largest Contentful Paint) score was affected after the redesign.
+
+
