@@ -2,6 +2,9 @@
 import { getCollection } from 'astro:content';
 import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
 
+// Import all images from the assets folder
+const allImages = import.meta.glob<any>('../../assets/images/**/*.{jpg,png,svg}', { eager: true });
+
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
@@ -17,6 +20,19 @@ interface Props {
 const { post } = Astro.props;
 const { Content } = await post.render();
 const wordCount = post.body.split(/\s+/).length;
+
+// Load the featured image if it exists
+let featuredImage = null;
+if (post.data.image) {
+  const imagePath = post.data.image;
+  // Try to find the image in the glob results
+  for (const [key, value] of Object.entries(allImages)) {
+    if (key.endsWith(imagePath)) {
+      featuredImage = (value as any).default;
+      break;
+    }
+  }
+}
 ---
 
 <BlogPostLayout
@@ -25,6 +41,7 @@ const wordCount = post.body.split(/\s+/).length;
   category={post.data.category}
   tags={post.data.tags}
   excerpt={post.data.excerpt}
+  image={featuredImage}
   wordCount={wordCount}
 >
   <Content />

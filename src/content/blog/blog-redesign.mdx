@@ -1,0 +1,78 @@
+---
+title: "Blog Redesign"
+date: 2026-03-01T15:00:00+05:30
+excerpt: "A look at how I redesigned my blog, comparing the previous version with the new design."
+category: "Web Programming"
+tags: ["web-design", "astro", "redesign"]
+---
+
+import { Image } from 'astro:assets';
+import beforeImage from '../../assets/images/2026/03/blog-redesign-before.png';
+import afterImage from '../../assets/images/2026/03/blog-redesign-after.png';
+import lcpBeforeImage from '../../assets/images/2026/03/lcp-before.png';
+import lcpAfterImage from '../../assets/images/2026/03/lcp-after.png';
+import lcpFinalImage from '../../assets/images/2026/03/lcp-final.png';
+
+I recently redesigned my blog, and I wanted to share the transformation. Here's a side-by-side comparison of the before and after versions.
+
+## Home Page
+
+The recent posts section was added to the home page to improve user engagement.
+
+#### Home Page / Before
+
+<Image
+  src={beforeImage}
+  alt="Blog homepage before redesign"
+  width={1920}
+  height={1080}
+  sizes="(max-width: 768px) 100vw, 800px"
+/>
+
+#### Home Page / After
+
+<Image
+  src={afterImage}
+  alt="Blog homepage after redesign"
+  width={1920}
+  height={1080}
+  sizes="(max-width: 768px) 100vw, 800px"
+/>
+
+## LCP Performance Comparison
+
+While this is great, the LCP (Largest Contentful Paint) score was affected after the redesign.
+
+#### LCP Perf / Before
+
+<Image
+  src={lcpBeforeImage}
+  alt="LCP metrics before redesign"
+  width={1823}
+  height={673}
+  sizes="(max-width: 768px) 100vw, 800px"
+/>
+
+#### LCP Perf / After
+
+<Image
+  src={lcpAfterImage}
+  alt="LCP metrics after redesign"
+  width={1818}
+  height={1367}
+  sizes="(max-width: 768px) 100vw, 800px"
+/>
+
+Hence, I took time to optimize the images and the code to improve the LCP score.
+
+#### LCP Perf / Final
+
+<Image
+  src={lcpFinalImage}
+  alt="LCP metrics after optimization"
+  width={1818}
+  height={1367}
+  sizes="(max-width: 768px) 100vw, 800px"
+/>
+
+## About Page

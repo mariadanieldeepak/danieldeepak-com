@@ -3,11 +3,12 @@ const currentPath = Astro.url.pathname;
 
 const navLinks = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Blog', path: '/blog' },
-  { label: 'FAQ', path: '/faq' },
-  { label: 'Now', path: '/now' },
-  { label: 'Tools', path: '/tools' },
+  { label: 'About', path: '/about/' },
+  { label: 'Blog', path: '/blog/' },
+  { label: 'FAQ', path: '/faq/' },
+  { label: 'Now', path: '/now/' },
+  { label: 'Tools', path: '/tools/' },
+  { label: 'Contact', path: '/contact/' },
 ];
 
 const isActive = (path: string) => {
@@ -19,8 +20,13 @@ const isActive = (path: string) => {
 
 <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
   <div class="max-w-[1100px] mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-    <a href="/" class="text-2xl font-bold text-primary hover:opacity-80 transition">
-      Daniel Deepak
+    <a href="/" class="hover:opacity-80 transition">
+      <div class="text-2xl font-bold text-primary tracking-tight">
+        Maria Daniel Deepak
+      </div>
+      <div class="text-sm text-gray-600">
+        Progression Not Perfection
+      </div>
     </a>
 
     <!-- Desktop Navigation -->

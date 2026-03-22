@@ -1,88 +1,48 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+import { YouTube } from '@astro-community/astro-embed-youtube';
+import myOfficeImage from '../assets/images/2026/02/my-office.jpg';
 ---
 
 <BaseLayout title="About" description="Learn more about Daniel Deepak.">
   <div class="py-12 md:py-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
-      <!-- Photo -->
-      <div class="flex justify-center md:justify-start">
-        <img
-          src="/images/placeholder-avatar.svg"
-          alt="Daniel Deepak"
-          class="w-64 h-64 rounded-2xl shadow-lg object-cover"
+    <h1 class="text-4xl md:text-5xl font-bold mb-12">About Me</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-[360px_1fr] gap-12 md:gap-16 mb-12">
+      <figure>
+        <Image
+          src={myOfficeImage}
+          alt="Daniel’s office workspace"
+          width={360}
+          format="webp"
+          quality="mid"
+          sizes="(max-width: 768px) 100vw, 360px"
+          class="rounded-lg h-auto"
         />
-      </div>
+        <figcaption class="text-center text-gray-600 text-sm mt-3">My Workspace</figcaption>
+      </figure>
 
-      <!-- Bio -->
-      <div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">About Me</h1>
+      <div class="prose space-y-6">
+        <p>
+          Hello, I’m Daniel. I come from a humble background. I grew up admiring people who did things better than me. I made myself better by following their footprints and I still do. Along the way I inspire others to grow.
+        </p>
 
-        <div class="prose space-y-6">
-          <p>
-            I'm Daniel Deepak, and I'm fascinated by how people think, how markets work,
-            and how the right tools can change everything.
-          </p>
+        <h2 class="text-2xl font-bold">My Philosophy</h2>
 
-          <p>
-            For the past decade, I've been building products, studying mental models, and
-            documenting the journey. This blog is my space to share ideas that I think
-            matter—things I've learned from building, from reading, and from talking with
-            people who are doing interesting things.
-          </p>
+        <p>
+          I started questioning things from my young age. People around me think I’m one of a kind. But I’m not. The philosophy of Stoicism will explain why.
+        </p>
 
-          <h2 class="text-2xl font-bold mt-8">What I Believe</h2>
-
-          <ul class="space-y-4">
-            <li>
-              <strong>Clarity is rare.</strong> Most people haven't thought deeply about what
-              they believe or why they're building what they're building. I write to think
-              clearly.
-            </li>
-            <li>
-              <strong>Tools shape thinking.</strong> The right tool doesn't just save time—it
-              changes how you approach a problem. That's why I'm obsessed with productivity
-              and workflow optimization.
-            </li>
-            <li>
-              <strong>First principles matter.</strong> In a world of conventional wisdom and
-              inherited constraints, the ability to think from first principles is a
-              superpower.
-            </li>
-            <li>
-              <strong>Building in public builds trust.</strong> Transparency, honesty about
-              progress, and showing your work are underrated competitive advantages.
-            </li>
-          </ul>
-
-          <h2 class="text-2xl font-bold mt-8">Currently</h2>
-
-          <p>
-            I'm focused on understanding how to build sustainably, how to make decisions
-            with incomplete information, and how to create something that matters to people.
-          </p>
-
-          <p>
-            When I'm not thinking about these things, you'll find me reading, experimenting
-            with new tools and workflows, or documenting insights that might be useful to
-            others.
-          </p>
-
-          <h2 class="text-2xl font-bold mt-8">Get In Touch</h2>
-
-          <p>
-            If you're thinking about similar things or want to discuss ideas, I'd love to
-            hear from you. Reach out on{' '}
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              Twitter/X
-            </a>{' '}
-            or{' '}
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-            .
-          </p>
+        <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+          <YouTube id="R9OCA6UFE-0" />
         </div>
+
+        <h2 class="text-2xl font-bold">My Work</h2>
+
+        <p>
+          I’m a developer at Elegant Themes. Our customers use Divi, our flagship product, to build their business websites and blogs and make money without the need to write even a single line of code. I suggest you to give Divi a try.
+        </p>
       </div>
     </div>
   </div>

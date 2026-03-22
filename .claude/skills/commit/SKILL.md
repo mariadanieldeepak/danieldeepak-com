@@ -57,15 +57,33 @@ Analyze what type of branch logic to apply.
 **If already on feature/hotfix/release branch:**
 - Proceed without creating a new branch
 
-### 5. Create Conventional Commit Message
+### 5. Auto-Generate Conventional Commit Message
 
-Prompt the user for:
-- **Type**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, or `revert`
-- **Scope**: (optional) component or module name
-- **Breaking change**: (y/n) - adds `!` after type if yes
-- **Summary**: concise description
+Analyze the modified files to automatically determine commit type and generate message:
 
-Message format: `<type>(<scope>)<!>: <summary>`
+**Type Detection Logic:**
+- **docs**: Only `.md`, `.mdx` files changed
+- **style**: Only CSS, Tailwind, formatting files (`.css`, `.scss`, Prettier config)
+- **test**: Only test files changed (`*.test.ts`, `*.spec.ts`)
+- **refactor**: Code structure changes without feature/fix (TypeScript/JS changes with no new behavior)
+- **feat**: New components, pages, or features (`.astro`, `.tsx`, `.ts` additions)
+- **fix**: Bug fixes or corrections (existing file modifications)
+- **build**: Build config or dependencies (package.json, astro.config, tsconfig)
+- **ci**: CI/CD changes (GitHub Actions, workflow files)
+- **chore**: Miscellaneous maintenance
+
+**Scope Detection:**
+- Extract directory/component name from modified files
+- Examples: `Hero`, `BlogCard`, `config`, `image-optimization`
+
+**Summary Generation:**
+- Analyze the actual changes (git diff)
+- Generate a concise, present-tense description
+- Keep under 72 characters
+
+**Message Format:** `<type>(<scope>): <summary>`
+
+**Example:** `feat(Hero): add animated background gradient`
 
 Validate against regex:
 ```
@@ -86,11 +104,20 @@ Display success message with branch and commit info.
 
 ```
 /commit
-# Interactive prompts guide through creating a feature branch commit
+# Analyzes modified files and auto-generates a feature branch commit
 
 /commit hotfix
-# Creates a hotfix branch from master for critical fixes
+# Creates a hotfix branch from master and auto-generates commit message for critical fixes
 ```
+
+### What It Does
+
+1. Shows git status and modified files
+2. Detects commit type from file changes (feat, fix, docs, etc.)
+3. Extracts scope from directory/component names
+4. Generates commit message automatically
+5. Creates feature/hotfix branch if needed
+6. Commits with generated message
 
 ## Conventional Commits Reference
 

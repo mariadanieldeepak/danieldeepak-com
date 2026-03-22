@@ -5,9 +5,13 @@ import Footer from '../components/Footer.astro';
 interface Props {
   title: string;
   description?: string;
+  preloadImage?: {
+    src: string;
+    type?: string;
+  };
 }
 
-const { title, description = 'Personal blog and thoughts.' } = Astro.props;
+const { title, description = 'Personal blog and thoughts.', preloadImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,8 +26,25 @@ const { title, description = 'Personal blog and thoughts.' } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    {preloadImage && (
+      <link
+        rel="preload"
+        href={preloadImage.src}
+        as="image"
+        type={preloadImage.type || 'image/webp'}
+        fetchpriority="high"
+      />
+    )}
   </head>
   <body class="font-sans bg-white text-primary">
     <Navbar />
@@ -86,6 +107,10 @@ const { title, description = 'Personal blog and thoughts.' } = Astro.props;
   code {
     font-family: 'Courier New', monospace;
     font-size: 0.875em;
+  }
+
+  .prose code {
+    background-color: transparent !important;
   }
 
   pre {
